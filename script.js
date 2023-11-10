@@ -14,9 +14,9 @@ window.addEventListener("load", function() {
         console.log(listedPlanets);
         // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
         let target = pickPlanet(listedPlanets);
-        const doc = document.getElementById("missionTarget");
+        //const doc = document.getElementById("missionTarget");
         //console.log(target);
-        addDestinationInfo(doc, target.name, target.diameter, target.star, target.distance, target.moons, target.image);
+        addDestinationInfo(document, target.name, target.diameter, target.star, target.distance, target.moons, target.image);
     });
     
     // Code for the Form
