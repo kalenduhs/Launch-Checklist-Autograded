@@ -52,6 +52,14 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
         alert('Please enter a number for Cargo Mass');
     }
 
+    /* if (validateInput(pilot) || validateInput(copilot) || validateInput(fuelLevel) || validateInput(cargoLevel) === 'Empty') {
+        alert('Please enter all fields');
+    } else if (validateInput(pilot) || validateInput(copilot) === 'Is a Number') {
+        alert('Please enter valid input');
+    } else if (validateInput(fuelLevel) || validateInput(cargoLevel) === 'Not a Number') {
+        alert('Please enter valid input');
+    } */
+
     //console.log(list);
     //list.style.visibility = "visible";
     /* list.previousElementSibling.innerHTML = "Shuttle not ready for launch";
