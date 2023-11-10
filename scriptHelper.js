@@ -29,7 +29,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
  }
  
  function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-    console.log("this called");
+    //console.log("this called");
     if (validateInput(pilot) === 'Empty') {
         alert('Please enter all fields');
     } else if (validateInput(pilot) === 'Is a Number') {
@@ -51,51 +51,51 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
         alert('Please enter a number for Cargo Mass');
     }
 
-    console.log(list);
+    //console.log(list);
     //list.style.visibility = "visible";
     /* list.previousElementSibling.innerHTML = "Shuttle not ready for launch";
     list.previousElementSibling.style.color = "red";  */
+
+    const pilotStatus = document.getElementById('pilotStatus');
+    const copilotStatus = document.getElementById('copilotStatus');
+    const fuelStatus = document.getElementById('fuelStatus');
+    const cargoStatus = document.getElementById('cargoStatus');
 
     if (fuelLevel >= 10000 && cargoLevel < 10000) {
         list.style.visibility = "visible";
         list.previousElementSibling.innerHTML = "Shuttle is Ready for Launch";
         list.previousElementSibling.style.color = 'green';
-        list.innerHTML = `<ol>
-        <li id="pilotStatus" data-testid="pilotStatus">Pilot ${pilot} is ready for launch</li>
-        <li id="copilotStatus" data-testid="copilotStatus">Co-pilot ${copilot} is ready for launch</li>
-        <li id="fuelStatus" data-testid="fuelStatus">Fuel level high enough for launch</li>
-        <li id="cargoStatus" data-testid="cargoStatus">Cargo mass low enough for launch</li>
-    </ol>`
+        pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
+        copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
+        fuelStatus.innerHTML = `Fuel level high enough for launch`;
+        cargoStatus.innerHTML = `Cargo mass low enough for launch`;    
+    
     } else if (fuelLevel < 10000 && cargoLevel > 10000) {
         list.style.visibility = "visible";
         list.previousElementSibling.innerHTML = "Shuttle Not Ready for Launch";
         list.previousElementSibling.style.color = "red";
-        list.innerHTML = `<ol>
-        <li id="pilotStatus" data-testid="pilotStatus">Pilot ${pilot} is ready for launch</li>
-        <li id="copilotStatus" data-testid="copilotStatus">Co-pilot ${copilot} is ready for launch</li>
-        <li id="fuelStatus" data-testid="fuelStatus">Fuel level too low for launch</li>
-        <li id="cargoStatus" data-testid="cargoStatus">Cargo mass too heavy for launch</li>
-    </ol>`
+        pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
+        copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
+        fuelStatus.innerHTML = `Fuel level too low for launch`;
+        cargoStatus.innerHTML = `Cargo mass too heavy for launch`; 
+
     } else if (fuelLevel < 10000 && cargoLevel < 10000) {
         list.style.visibility = "visible";
         list.previousElementSibling.innerHTML = "Shuttle Not Ready for Launch";
         list.previousElementSibling.style.color = "red";
-        list.innerHTML = `<ol>
-        <li id="pilotStatus" data-testid="pilotStatus">Pilot ${pilot} is ready for launch</li>
-        <li id="copilotStatus" data-testid="copilotStatus">Co-pilot ${copilot} is ready for launch</li>
-        <li id="fuelStatus" data-testid="fuelStatus">Fuel level too low for launch</li>
-        <li id="cargoStatus" data-testid="cargoStatus">Cargo mass low enough for launch</li>
-    </ol>`
+        pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
+        copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
+        fuelStatus.innerHTML = `Fuel level too low for launch`;
+        cargoStatus.innerHTML = `Cargo mass low enough for launch`; 
+
     } else if (fuelLevel >= 10000 && cargoLevel > 10000) {
         list.style.visibility = "visible";
         list.previousElementSibling.innerHTML = "Shuttle Not Ready for Launch";
         list.previousElementSibling.style.color = "red";
-        list.innerHTML = `<ol>
-        <li id="pilotStatus" data-testid="pilotStatus">Pilot ${pilot} is ready for launch</li>
-        <li id="copilotStatus" data-testid="copilotStatus">Co-pilot ${copilot} is ready for launch</li>
-        <li id="fuelStatus" data-testid="fuelStatus">Fuel level high enough for launch</li>
-        <li id="cargoStatus" data-testid="cargoStatus">Cargo mass too heavy for launch</li>
-    </ol>`
+        pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
+        copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
+        fuelStatus.innerHTML = `Fuel level high enough for launch`;
+        cargoStatus.innerHTML = `Cargo mass too heavy for launch`; 
     }
 
     //console.log('hello');

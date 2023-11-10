@@ -3,7 +3,7 @@
 //const formSubmission = require('./scriptHelper.js');
 
 window.addEventListener("load", function() {
-    console.log("testing");
+    //console.log("testing");
     let listedPlanets;
     // Set listedPlanetsResponse equal to the value returned by calling myFetch()
     let listedPlanetsResponse = myFetch();
@@ -15,7 +15,7 @@ window.addEventListener("load", function() {
         // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
         let target = pickPlanet(listedPlanets);
         const doc = document.getElementById("missionTarget");
-        console.log(target);
+        //console.log(target);
         addDestinationInfo(doc, target.name, target.diameter, target.star, target.distance, target.moons, target.image);
     });
     
@@ -32,7 +32,7 @@ window.addEventListener("load", function() {
         const fuelLevel = form.childNodes[1][2].value;
         const cargoLevel = form.childNodes[1][3].value;
         const list = document.getElementById("faultyItems");
-        formSubmission(form, list, pilot, coPilot, fuelLevel, cargoLevel);
+        formSubmission(document, list, pilot, coPilot, fuelLevel, cargoLevel);
     });
 
  });
